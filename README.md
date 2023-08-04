@@ -13,6 +13,7 @@ We use **Resnet50** in **torchvision.models** to train a model which can help cl
 ## Processing:
 ### Code execution:
 (Data need to download additionally, I don't put in the folder)
+
 python3 train.py
 
 python3 test.py
