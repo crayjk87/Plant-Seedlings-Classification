@@ -8,10 +8,11 @@ GPU : NVIDIA GeForce GTX 1080 Ti
 
 
 ## Abstract
-We use **Resnet50** in **torchvision.models** to train a model which can help classifying plant seeds, so as to do transfer learning in **fc** layer.
+We use **Resnet50** in **torchvision.models** to train a model which can help classifying plant seeds, so as to do transfer learning with fc layer and model weights.
 
 ## Processing:
 ### Code execution:
+(Data need to download additionally, I don't put in the folder)
 python3 train.py
 
 python3 test.py
@@ -21,10 +22,8 @@ python3 test.py
 
    
     fc_layer = nn.Sequential(
-        nn.Linear(model.fc.in_features, 1024),
-        nn.ReLU(),
-        nn.Dropout(0.5),
-        nn.Linear(1024, 12)
+        nn.Linear(model.fc.in_features, 12),
+        
     ) }.
 
 
@@ -34,13 +33,6 @@ python3 test.py
 
    Then generate `submission.csv` in order to submit Kaggle.
 
-
-
-   
-
-
-## Training loss and training accuracy:
-![](output/)
 
 ## Score on Kaggle :
 
@@ -54,6 +46,21 @@ nn.Sequential(nn.Linear(model.fc.in_features, 1024), nn.ReLU(), nn.Dropout(0.5),
 
 We can see the less nn element we add, the higher of the score.
 ![](kaggle_score.png)
+   
+
+
+## Training loss and training accuracy:
+- In nn.Sequential(nn.Linear(model.fc.in_features,12))
+![](output/acc1.png)
+![](output/loss1.png)
+- In nn.Sequential(nn.Linear(model.fc.in_features, 1024), nn.ReLU(), nn.Linear(1024, 12)) ,
+![](output/acc2.png)
+![](output/loss2.png)
+- In nn.Sequential(nn.Linear(model.fc.in_features, 1024), nn.ReLU(), nn.Dropout(0.5), nn.Linear(1024, 12))
+![](output/acc3.png)
+![](output/loss3.png)
+
+
 
 ## Reference
 https://pytorch.org/docs/stable/notes/broadcasting.html
