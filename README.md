@@ -29,7 +29,7 @@ python3 test.py
 
    And counted training accuracy/error and loss accuracy/error, the plot them with `utils/save_plot.py`'s function **save_acc** and **save_loss**.
 
-   The plots will be put in `output` folder
+   The plots was put in `output` folder
 
 4. Finally, the data had been tested in `test.py` with the model that was trained which loading `trained_model_weight.pth`, `utils/save_model.py` can help store the weight of model.
 
@@ -55,7 +55,7 @@ We can see the less nn element we add, the higher of the score.
 - In nn.Sequential(nn.Linear(model.fc.in_features,12))
 ![](output/acc1.png)
 ![](output/loss1.png)
-- In nn.Sequential(nn.Linear(model.fc.in_features, 1024), nn.ReLU(), nn.Linear(1024, 12)) ,
+- In nn.Sequential(nn.Linear(model.fc.in_features, 1024), nn.ReLU(), nn.Linear(1024, 12)) 
 ![](output/acc2.png)
 ![](output/loss2.png)
 - In nn.Sequential(nn.Linear(model.fc.in_features, 1024), nn.ReLU(), nn.Dropout(0.5), nn.Linear(1024, 12))
