@@ -29,7 +29,9 @@ python3 test.py
 
    And counted training accuracy/error and loss accuracy/error, the plot them with `utils/save_plot.py`'s function **save_acc** and **save_loss**.
 
-3. Finally, the data had been tested in `test.py` with the model that was trained which loading `trained_model_weight.pth`, `utils/save_model.py` can help store the weight of model.
+   The plots will be put in `output` folder
+
+4. Finally, the data had been tested in `test.py` with the model that was trained which loading `trained_model_weight.pth`, `utils/save_model.py` can help store the weight of model.
 
    Then generate `submission.csv` in order to submit Kaggle.
 
