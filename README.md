@@ -37,7 +37,7 @@ python3 test.py
 
 ## Score on Kaggle :
 
-submission 1/2/3 corresponded to 
+submission 1/2/3.csv corresponded to 
 
 nn.Sequential(nn.Linear(model.fc.in_features,12)),
 
