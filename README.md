@@ -40,8 +40,20 @@ python3 test.py
 
 
 ## Training loss and training accuracy:
+![](output/)
 
 ## Score on Kaggle :
+
+submission 1/2/3 corresponded to 
+
+nn.Sequential(nn.Linear(model.fc.in_features,12)),
+
+nn.Sequential(nn.Linear(model.fc.in_features, 1024), nn.ReLU(), nn.Linear(1024, 12)) ,
+
+nn.Sequential(nn.Linear(model.fc.in_features, 1024), nn.ReLU(), nn.Dropout(0.5), nn.Linear(1024, 12)), respectively.
+
+We can see the less nn element we add, the higher of the score.
+![](kaggle_score.png)
 
 ## Reference
 https://pytorch.org/docs/stable/notes/broadcasting.html
