@@ -24,8 +24,7 @@ python3 test.py
    
     fc_layer = nn.Sequential(
         nn.Linear(model.fc.in_features, 12),
-        
-    ) }.
+        ) }.
 
 
    And counted training accuracy/error and loss accuracy/error, the plot them with `utils/save_plot.py`'s function **save_acc** and **save_loss**.
