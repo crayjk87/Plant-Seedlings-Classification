@@ -66,15 +66,25 @@ We can see the less nn element we add, the higher of the score.
 
 ## Reference
 https://pytorch.org/docs/stable/notes/broadcasting.html
+
 https://hackmd.io/@ccumvllab/pytorch_2_0_1#%E5%9B%BA%E5%AE%9A%E6%A8%A1%E5%9E%8B%E5%8F%83%E6%95%B8
+
 https://ithelp.ithome.com.tw/articles/10279642
+
 https://www.learncodewithmike.com/2020/11/python-pandas-dataframe-tutorial.html
+
 https://ithelp.ithome.com.tw/articles/10226578
+
 https://docs.python.org/zh-tw/3/library/os.path.html
+
 https://medium.com/@yuhsuan_chou/python-%E5%9F%BA%E7%A4%8E%E8%B3%87%E6%96%99%E8%A6%96%E8%A6%BA%E5%8C%96-matplotlib-401da7d14e04
+
 https://www.cnblogs.com/poloyy/p/12526592.html
+
 https://blog.csdn.net/weixin_37226516/article/details/62042550
+
 https://blog.csdn.net/ChaoMartin/article/details/118686268
+
 https://markdown.tw/
 https://pytorch.org/vision/stable/models.html
 https://blog.csdn.net/hgnuxc_1993/article/details/120641681
