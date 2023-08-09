@@ -8,18 +8,19 @@ GPU : NVIDIA GeForce GTX 1080 Ti
 
 
 ## Abstract
-We use **Resnet50** in **torchvision.models** to train a model which can help classifying plant seeds, so as to do transfer learning with fc layer and model weights.
+We use **Resnet50** in **torchvision.models** to train a model which can help classifying plant seedings, so as to do transfer learning with fc layer and model weights.
 
 ## Processing:
 ### Code execution:
 (Data need to download additionally, I don't put in the folder)
-
+```
 python3 train.py
 
 python3 test.py
+```
 ### Steps of training:
-1. Created training dataset and testing dataset in `datasets.py`, then loaded into dataloader for model, the training set had been split into 4:1 for training and validation set.
-2. Then trained the model in `train.py`, the hyper-parameter was set as {epoch=100, batch size=32, learning rate=0.002,
+1. Create training dataset and testing dataset in `datasets.py`, then load it into dataloader for model, the training set is split into 4:1 for training and validation set.
+2. Then train the model in `train.py`, the hyper-parameter is set as {epoch=100, batch size=32, learning rate=0.002,
 
    
     fc_layer = nn.Sequential(
@@ -27,11 +28,11 @@ python3 test.py
         ) }.
 
 
-   And counted training accuracy/error and loss accuracy/error, the plot them with `utils/save_plot.py`'s function **save_acc** and **save_loss**.
+   And count training accuracy/error and loss accuracy/error, the plot them with `utils/save_plot.py`'s function **save_acc** and **save_loss**.
 
-   The plots was put in `output` folder
+   The plots is put in `output` folder.
 
-4. Finally, the data had been tested in `test.py` with the model that was trained which loading `trained_model_weight.pth`, `utils/save_model.py` can help store the weight of model.
+4. Finally, the data is tested in `test.py` with the model that is trained which loading `trained_model_weight.pth`, `utils/save_model.py` can help store the weight of model.
 
    Then generate `submission.csv` in order to submit Kaggle.
 
