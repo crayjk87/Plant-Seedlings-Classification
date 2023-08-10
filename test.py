@@ -10,7 +10,7 @@ from tqdm.auto import tqdm
 def main():
     dev = torch.device('cpu')
     if torch.cuda.is_available:
-        dev = torch.device('cuda:0')
+        dev = torch.device('cuda:7')
     
     test_loader, submission = load_test_data()
     submission = test(test_loader, submission, dev)
@@ -29,7 +29,7 @@ def test(test_loader, submission, dev):
     for img, file in tqdm(test_loader):
         img = img.to(dev)
         predict = model(img)
-        _, predict_class = torch.max(predict, dim=1)
+        predict_class = torch.argmax(dim=1, keepdim=True)
         #print(type(predict_class))
         predict_class = predict_class.cpu().numpy()
         
