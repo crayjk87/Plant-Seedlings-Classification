@@ -15,7 +15,7 @@ def main():
     epoch_num =100
     dev = torch.device('cpu')
     if torch.cuda.is_available:
-        dev = torch.device('cuda:0')
+        dev = torch.device('cuda:7')
 
     train_loader, val_loader = load_train_data()
     model = trans_resnet_50()
@@ -59,7 +59,8 @@ def train_res(model, dev, epoch_num, train_loader, val_loader):
             predict_class = output.argmax(dim=1, keepdim=True)
 
             #print(len(predict_class))
-            training_acc += predict_class.eq(label.view_as(predict_class)).sum().item()/len(predict_class) # one batch is 32
+            label = label.unsqueeze(1)
+            training_acc += predict_class.eq(label).sum().item()/len(predict_class) # one batch is 32
 
         training_loss /= len(train_loader)
         training_acc /= len(train_loader)
@@ -78,8 +79,8 @@ def train_res(model, dev, epoch_num, train_loader, val_loader):
             val_loss += loss.item()
 
             predict_class = output.argmax(dim=1, keepdim=True)
-            
-            val_acc += predict_class.eq(label.view_as(predict_class)).sum().item()/len(predict_class)
+            label = label.unsqueeze(1)
+            val_acc += predict_class.eq(label).sum().item()/len(predict_class)
 
         val_loss /= len(val_loader)
         val_acc /= len(val_loader)
