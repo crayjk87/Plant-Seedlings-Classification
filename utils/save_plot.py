@@ -3,14 +3,16 @@ import matplotlib.pyplot as plt
 # Save the bar chart of all train data
 def save_bar(df):
     plt.title('seed_classification numbers')
-    plt.bar(df.Catagory.unique(),
+    plt.barh(df.Catagory.unique(),
         df.Catagory.value_counts(), 
-        width=0.8, 
+        height=0.8, 
         align='center', 
     )
-    plt.xticks(rotation='vertical')
+    #plt.xticks(rotation='vertical')
+    
     for classes, num in zip(df.Catagory.unique(), df.Catagory.value_counts()):
-        plt.text(classes, num, num, ha='center', va='bottom')
+        plt.text(num, classes, num, ha='left', va='center')
+    plt.tight_layout()
     plt.savefig('output/seed_classification.png')
 
 # Save training accuracy plot
