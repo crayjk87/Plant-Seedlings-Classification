@@ -106,7 +106,7 @@ def load_train_data():
 
     # Dataloader of the data
     train_loader = DataLoader(train_set, batch_size=batch_size, num_workers=4, shuffle=True, pin_memory = True)
-    val_loader = DataLoader(val_set, batch_size=batch_size, num_workers=4, shuffle=True, pin_memory = True)
+    val_loader = DataLoader(val_set, batch_size=batch_size, num_workers=4, pin_memory = True)
 
     return train_loader, val_loader
 
@@ -119,7 +119,7 @@ def load_test_data():
     
     df = list_dir(root_test)
     test_set = seed_test_dataset(root_test, val_data_trans)
-    test_loader = DataLoader(test_set, batch_size=batch_size, num_workers=4, shuffle=True)
+    test_loader = DataLoader(test_set, batch_size=batch_size, num_workers=4)
 
     return test_loader, df
 
